@@ -1,12 +1,16 @@
+// About.js
 import React from "react";
+import Links from "./Links";
 
-function About() {
+function About({ bio, github, linkedin }) {
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>Put the bio in here</p>
+      {/* Conditionally render the bio */}
+      {bio && <p>{bio}</p>}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
+      {/* Render the Links component and pass the props */}
+      <Links github={github} linkedin={linkedin} />
     </div>
   );
 }
